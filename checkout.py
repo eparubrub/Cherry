@@ -12,15 +12,15 @@ browser = webdriver.Chrome()
 browser.get('')
 
 while True:
-    url = "http://www.supremenewyork.com/shop/accessories/geobpzkvf"
+    url = ""
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
+    #edit accordingly
     name_box = soup.find('b', attrs={'class': 'button sold-out'})
-    string1 = str(name_box)
-    Nonerino = "None"
-    if string1 == Nonerino:
-        print('ITS UPDATED U GOON')
-        print(string1)
+    string_button = str(name_box)
+    string_none = "None"
+    if string_button == string_none:
+        print('UPDATED')
         webbrowser.open(url)
         break
     else:
