@@ -7,6 +7,9 @@ class UserSettings:
         self.headless = False
         self.pre_start = False
         self.delay = .55
+        self.driver_path = "helper_utilities/chromedriver"
+        self.user = "user-data-dir=user"
+        self.headless = True
 
 
 class UserSelection:
