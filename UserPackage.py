@@ -6,16 +6,18 @@ class UserSettings:
         self.safe_autofill = True
         self.headless = False
         self.pre_start = False
-        self.delay = .55
+        # self.delay = .55
+        self.delay = 2
         self.driver_path = "helper_utilities/chromedriver"
         self.user = "user-data-dir=user"
-        self.headless = True
+        self.headless = False
 
 
 class UserSelection:
     def __init__(self):
         self.keywords = 'Tagless Tees'
-        self.style = 'black'
+        self.style = 'Black'
+        self.size = 'M'
 
 
 class UserProfile:
