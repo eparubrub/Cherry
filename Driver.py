@@ -13,7 +13,8 @@ class Driver:
         if headless:
             options.add_argument("--headless")
 
-        options.add_argument(user)
+        if user is not None:
+            options.add_argument(user)
 
         self.driver = webdriver.Chrome(executable_path=driver_path, options=options)
 
@@ -90,11 +91,16 @@ class Driver:
     def add_to_cart(self):
         self.driver.find_element_by_xpath(self.submit_xpath).click()
 
-    def check_page_checkout(self, checkout_url):
+    # TODO: Find a workaround for this temporary http/https problem
 
-        while self.driver.current_url != checkout_url:
-            print("expecting checkout url but current url stuck at:", self.driver.current_url)
-            time.sleep(.01)
+    def check_page_checkout(self):
+        checkout_shortcut = "supremenewyork.com/checkout"
+        if checkout_shortcut not in self.driver.current_url:
+            print("Current url is: ", self.driver.current_url)
+            while checkout_shortcut not in self.driver.current_url:
+                time.sleep(.01)
+        else:
+            print("Got to checkout successfully")
 
     def process_payment(self):
         self.driver.find_element_by_xpath(self.process_payment_xpath).click()
@@ -114,7 +120,7 @@ class Driver:
         self.process_payment_element = self.driver.find_element_by_xpath(self.process_payment_xpath)
 
     def check_autofill(self):
-        if self.name_field_element.get_attribute("aria_invalid"):
+        if len(self.driver.find_elements_by_xpath("//*[@aria-invalid='false']")) == 0:
             print("No autofill provided, resorting to manual autofill")
 
     def manual_autofill(self, **kwargs):
