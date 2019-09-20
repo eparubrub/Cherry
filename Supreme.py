@@ -29,7 +29,6 @@ class Supreme:
 
         # timer.wait_until_start_time()
 
-
         bot = Driver(self.user_settings.driver_path, self.user_settings.user, self.user_settings.headless, self.user_settings.delay)
 
         bot.go_to("https://www.google.com")
