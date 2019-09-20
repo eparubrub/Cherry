@@ -29,15 +29,14 @@ class Supreme:
 
         # timer.wait_until_start_time()
 
-
         bot = Driver(self.user_settings.driver_path, self.user_settings.user, self.user_settings.headless, self.user_settings.delay)
 
-        # bot.go_to("https://www.google.com")
-        #
-        # bot.delay()
-        # bot.delay()
-        # bot.delay()
-        # bot.delay()
+        bot.go_to("https://www.google.com")
+
+        bot.delay()
+        bot.delay()
+        bot.delay()
+        bot.delay()
 
         timer.start()
 
@@ -90,22 +89,24 @@ class Supreme:
 
         bot.check_page_checkout()
 
+        bot.checkout_page_scan()
+
         bot.manual_autofill(
-            profile_name=self.user_settings.name,
-            profile_email=self.user_settings.email,
-            profile_tel=self.user_settings.tel,
-            profile_address=self.user_settings.address,
-            profile_apt=self.user_settings.apt,
-            profile_zip=self.user_settings.zip,
-            profile_city=self.user_settings.city,
-            profile_card=self.user_settings.card,
-            profile_month=self.user_settings.month,
-            profile_year=self.user_settings.year,
-            profile_cvv=self.user_settings.cvv,
-            safe_autofill=self.user_settings.safe_autofill
+            profile_name=self.profile.name,
+            profile_email=self.profile.email,
+            profile_tel=self.profile.tel,
+            profile_address=self.profile.address,
+            profile_apt=self.profile.apt,
+            profile_zip=self.profile.zip,
+            profile_city=self.profile.city,
+            profile_card=self.profile.card,
+            profile_month=self.profile.month,
+            profile_year=self.profile.year,
+            profile_cvv=self.profile.cvv,
+            safe_autofill=self.profile.safe_autofill
         )
 
-        bot.process_payment()
+        # bot.process_payment()
 
         timer.end()
 
@@ -117,7 +118,9 @@ def main():
 
     # supreme.setup()
 
-    supreme.checkout()
+    supreme.checkout_no_profile()
+    
+    # supreme.checkout_with_profile()
 
 
 if __name__ == "__main__":

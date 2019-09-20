@@ -16,8 +16,7 @@ class UserSettings:
         self.pre_start = False
         self.delay = .75
         self.driver_path = "helper_utilities/chromedriver"
-        # self.user = "user-data-dir=user"
-        self.user = None
+        self.user = "user-data-dir=user"
         self.headless = False
 
 
