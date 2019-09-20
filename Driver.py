@@ -181,8 +181,8 @@ class Driver:
             for cvv in profile_cvv:
                 self.cvv_field_element.send_keys(cvv)
 
-        self.select_month.select_by_visible_text(profile_month)
-        self.select_year.select_by_visible_text(profile_year)
+        self.select_month_element.select_by_visible_text(profile_month)
+        self.select_year_element.select_by_visible_text(profile_year)
 
         terms = self.driver.find_element_by_xpath(self.terms_xpath)
         hover = ActionChains(self.driver).move_to_element(terms)
