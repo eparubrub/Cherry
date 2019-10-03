@@ -1,14 +1,7 @@
 __author__ = 'Emmit'
-import time
 from UserPackage import *
 from Driver import *
 from Timer import *
-from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from itertools import zip_longest
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.chrome.options import Options
-
 
 class Supreme:
     def __init__(self):
