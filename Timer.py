@@ -1,6 +1,4 @@
 import time
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from datetime import datetime
 
 time_now = datetime.now().strftime("%H:%M:%S.%f")
