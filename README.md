@@ -1,5 +1,5 @@
-# Mr.Snooze
-Mr. Snooze is a program intended to help ensure rapid checkouts on retail sites.
+# Cherry
+Cherry is a program intended to help ensure rapid checkouts on retail sites. This was a small side project that was created as an idea for open-source automation. 
 
 ## Current Functionality
 Right now, the program is under development to support SupremeNewYork.com
